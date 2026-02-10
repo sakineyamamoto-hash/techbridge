@@ -1,0 +1,888 @@
+@charset "utf-8";
+
+/* 基本設定 */
+body{
+  font-family: "Noto Sans JP", sans-serif;
+  color:#333;
+  background-color: #ffffff;
+  line-height:1.7;
+  letter-spacing:0.05em;
+  background:linear-gradient(#e9f1ff,#ffffff);
+}
+
+
+
+.inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+h2{
+  font-size: 32px;
+  text-align:center;
+  margin-bottom:80px;
+  font-weight:bold;
+}
+
+
+section{
+  padding:140px 0;
+}
+
+/* ボタン小 */
+.header-btn{
+  align-items: center;
+  margin: 10px 0;
+  border-radius: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.header-btn a{
+  display:inline-block;
+  padding:12px 28px;
+  background:#fab619;
+  border-radius:20px;
+  color:#fff;
+  font-weight:bold;
+}
+
+
+/* btn 基本設定 */
+.cta-btn{
+  background:#FFB800;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  color: #fff;
+  font-weight: bold;
+  font-size:24px;
+}
+
+.cta-btn:hover,
+.header-btn a:hover{
+  background:#e56700;
+}
+
+/* flow ボタン */
+.cta-btn.big{
+  padding:25px 200px;
+}
+
+.button{
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+/* ヘッダー */
+header{
+    height: 70px;
+}
+
+.header-inner{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+}
+
+
+
+.header-tell{
+  font-size: 32px;
+  font-weight: bold;
+  color: #150451;
+}
+
+.mv{
+    width: 100%;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mv-inner{
+  position: relative;
+}
+
+.mv-img img{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    display: block;
+    object-position: right center; /* ← これで右寄せ */
+}
+
+/* 台形の色ブロック */
+.mv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;   /* 台形の幅（調整OK） */
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    #1d4ed8 0%,
+    #2563eb 40%,
+    rgba(37,99,235,0.6) 100%
+  );
+  opacity: 0.8;
+
+  /* 台形を作るポイント！ */
+  clip-path: polygon(0 0, 55% 0, 40% 100%, 0 100%);
+
+  z-index: 1;
+}
+
+
+.mv-text{
+  position: absolute;
+  bottom: 10%;      /* 下からの位置 */
+  left: 5%;
+  color: #fff;
+  z-index: 2;
+}
+
+/* テキストの余白を下に確保 */
+.mv-text p.mv-top,
+.mv-text h1,
+.mv-text p.mv-exp {
+  margin-bottom: 20px;  /* ここでボタンとの距離を作る */
+}
+
+/* ボタンの幅はそのまま、文字中央寄せ */
+.cta-btn.top{
+  display: inline-block;  /* ブロック幅にせず、横幅固定 */
+  padding: 25px 100px;
+}
+
+
+.mv-top{
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    
+}
+
+.mv-text h1{
+    font-size: 3.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* ======================
+   FVフェード
+====================== */
+
+/* 画像初期 */
+.mv-img{
+  overflow:hidden;
+}
+
+.mv-img img{
+  opacity:0;
+  transform:scale(1.08);
+  transition:1.4s cubic-bezier(.19,1,.22,1);
+}
+
+/* 画像表示 */
+.mv-img.show img{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* テキスト初期 */
+.mv-text{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(.19,1,.22,1);
+}
+
+/* テキスト表示 */
+.mv-text.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ボタン遅延 */
+.mv-text .cta-btn{
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s;
+}
+
+.mv-text.show .cta-btn{
+  opacity:1;
+  transform:translateY(0);
+  transition-delay:.6s;
+}
+
+
+/* ======================
+   trouble
+====================== */
+.trouble{
+  background:#BFD0E6;
+  text-align:center;
+}
+
+/* 親 */
+.trouble-area{
+  position:relative;
+  margin-top:50px;
+  height: 500px;
+}
+
+/* 人物 */
+.trouble-img{
+  position:absolute;
+  left:50%;
+  top:60%;
+  transform:translate(-50%,-50%);
+}
+
+.trouble-img img{
+  width:170px;
+}
+
+/* 吹き出し共通 */
+.trouble-item{
+  position:absolute;
+  background:#fff;
+  padding:30px 40px;
+  border-radius:40px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+  font-size:20px;
+}
+
+/* 左 */
+.item1{
+  top:50%;
+}
+
+/* 右上 */
+.item2{
+  right:5%;
+  top:30%;
+}
+
+/* 右下 */
+.item3{
+  right:10%;
+  bottom:15%;
+}
+
+.arrow img{
+  width:80px;
+}
+
+.arrow > p{
+  margin-top: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #13273e;
+}
+
+/* ======================
+   reason
+====================== */
+.reason{
+  background-color: #f8faff;
+  padding: 200px 0;
+}
+
+.reason span{
+  font-size: 45px;
+  color: #22048e;
+}
+
+.reason-circle ul{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.reason-circle ul li{
+  background-color: #c4e2fc;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:bold;
+  color: #13273e;
+  transform:translateY(40px);
+  opacity:0;
+  transition:.6s;
+}
+
+.reason-circle ul li.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* ←ここ修正 */
+.reason-circle ul li p{
+  font-size: 27px;
+  display:inline-block;
+  position:relative;
+  padding-bottom:10px;
+}
+
+/* 下線本体 */
+.reason-circle ul li p::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:6px;
+  background:#ba0000;
+
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .8s cubic-bezier(.19,1,.22,1);
+}
+
+/* 発火 */
+.reason-circle ul li.show p::after{
+  transform:scaleX(1);
+}
+
+
+/* ======================
+   実績
+====================== */
+.result{
+  padding:120px 0;
+  background:#e9f1fb;
+}
+
+.result .inner{
+  max-width:1100px;
+  margin:auto;
+  background:#2F6FED;
+  padding:80px 40px;
+  border-radius:30px;
+  text-align:center;
+}
+
+.result-title{
+  color:#fff;
+  font-size:28px;
+  margin-bottom:60px;
+  letter-spacing:.1em;
+}
+
+.result-box ul{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:40px;
+  padding:0;
+}
+
+.result-box li{
+  list-style:none;
+  background:#fff;
+  padding:50px 20px;
+  border-radius:18px;
+  width:280px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  transition:.3s;
+}
+
+.result-box li.main{
+  transform:scale(1.12);
+}
+
+.label{
+  font-size:16px;
+  letter-spacing:.15em;
+  color:#666;
+  margin-bottom:10px;
+}
+
+.num-wrap{
+  font-size:18px;
+  color:#333;
+}
+
+.num{
+  font-size:60px;
+  font-weight:700;
+  color:#2F6FED;
+  margin-right:4px;
+}
+
+.unit{
+  font-size:16px;
+}
+
+/* ======================
+   flow
+====================== */
+.flow{
+  background:#ffffff;
+  padding:150px 0;
+}
+
+.flow-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin: 100px 0;
+}
+
+/* 共通 */
+.flow-item{
+  background:#2d567f;
+  color:#fff;
+  font-weight:bold;
+  font-size:20px;
+  padding:90px 90px;
+  position:relative;
+
+  /* 台形＋右矢印 */
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 50%,
+    85% 100%,
+    0 100%,
+    15% 50%
+  );
+
+}
+
+/* 最初：左削らない */
+.flow-item:first-child{
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 50%,
+    85% 100%,
+    0 100%
+  );
+}
+
+.flow-item{
+  opacity:0;
+  transform:translateX(50px);
+  transition:0.6s;
+}
+
+.flow-item.show{
+  opacity:1;
+  transform:translateX(0);
+}
+
+
+/* ======================
+   利用者の声
+====================== */
+.voice-wrap{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:100px ;
+}
+
+.voice-item{
+  text-align: center;
+  background-color: #ffffff;
+  padding: 60px 40px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.voice-img img{
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.voice-name{
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+}
+
+.voice-text{
+  padding: 20px;
+}
+
+/* ======================
+   footer
+====================== */
+
+footer {
+  background-color: #09021f; /* フッターの背景色 */
+  color: #ebe9e9;            /* 文字色 */
+  padding: 40px 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+/* 内側のコンテナ */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* スマホで縦並びになる */
+  gap: 40px;
+}
+
+/* 各カラム */
+.footer-inner div {
+  flex: 1; /* 横幅を均等に */
+  min-width: 200px; /* 小さな画面で折り返し防止 */
+}
+
+/* 見出し */
+.footer-inner h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff9d5; /* 見出しだけゴールドっぽくしてアクセント */
+}
+
+/* コピーライト */
+footer .copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+/* リンク色調整（必要な場合） */
+.footer-inner a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+.btn-text{
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+/* =========================
+   ガチLP用スマホ
+========================= */
+@media screen and (max-width: 768px){
+
+.inner{
+  max-width:1000px;
+  padding:0 16px;
+}
+
+section{
+  padding:90px 0;
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:0px;
+}
+
+/* header */
+header{
+  height:60px;
+}
+
+.logo img{
+  width:80px;
+}
+
+.header-tell{
+  font-size:15px;
+}
+
+.header-btn a{
+  padding:10px 20px;
+  font-size:14px;
+}
+
+/* ======================
+   FV
+====================== */
+
+.mv-text{
+  left:4%;
+  bottom:8%;
+}
+
+.mv-top{
+  font-size:20px;
+}
+
+.mv-img img{
+  height:460px;
+}
+
+.mv-text h1{
+  font-size:26px;
+}
+
+.mv-exp{
+  font-size:14px;
+}
+
+.cta-btn.top{
+  padding:18px 50px;
+  font-size:16px;
+}
+
+/* ======================
+   trouble
+====================== */
+
+.trouble-area{
+  height:400px;
+}
+
+/* 左 */
+.item1{
+  top:25%;
+  left:5%;
+}
+
+/* 上 */
+.item2{
+  right:0%;
+  top:40%;
+}
+
+/* 下 */
+.item3{
+  right:65%;
+  bottom:35%;
+}
+
+.trouble-img img{
+  width:120px;
+  margin-top: 170px;
+}
+
+.trouble-item{
+  font-size:14px;
+  padding:14px 22px;
+}
+
+.arrow img{
+  margin-top: 50px;
+}
+
+.arrow > p{
+  margin-top: 15px;
+  font-size: 20px;
+}
+/* ======================
+   reason
+====================== */
+.reason{
+  padding: 100px 0;
+}
+
+.reason span{
+  font-size: 35px;
+}
+
+.reason-circle ul{
+  margin: 20px 0;
+}
+
+.reason-circle ul li{
+  width:130px;
+  height:130px;
+}
+
+.reason-circle ul li p{
+  font-size:15px;
+}
+
+
+/* ======================
+   result
+====================== */
+
+.result{
+  padding:80px 0;
+}
+
+.result .inner{
+  padding:40px 20px;
+  border-radius:25px;
+}
+
+/* 横並び維持 */
+.result-box ul{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+}
+
+.result-box li{
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+
+/* 真ん中だけ大きく */
+.result-box li.main{
+  transform:scale(1.05);
+}
+
+/* 数字 */
+.num{
+  font-size:34px;
+}
+
+/* タイトル */
+.result-title{
+  font-size:22px;
+  margin-bottom:40px;
+}
+
+.label{
+  font-size: 12px;
+}
+
+/* ======================
+   flow
+====================== */
+.flow{
+  padding: 50px 0;
+}
+
+ .flow-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    counter-reset: step;
+    margin: 50px 0;
+  }
+
+  .flow-item{
+    width:85%;
+    max-width:340px;
+    padding:30px;
+    background:#355C7D;
+    color:#fff;
+    border-radius:12px;
+    text-align:center;
+    position:relative;
+
+    /* ←これ重要 */
+    clip-path: none !important;
+  }
+
+  /* 番号 */
+  .flow-item::before{
+    content: counter(step);
+    counter-increment: step;
+    position:absolute;
+    left:12px;
+    background:#FFC107;
+    color:#000;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+
+  /* 下矢印 */
+  .flow-item::after{
+    content:"";
+    position:absolute;
+    bottom:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:12px solid #355C7D;
+  }
+
+  .flow-item:last-child::after{
+    display:none;
+  }
+
+  .btn-text{
+    font-size: 10px;
+  }
+
+
+/* ======================
+   voice
+====================== */
+
+  .voice-wrap{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .voice-item{
+    width:90%;
+    max-width:360px;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:28px 22px;
+  }
+
+  .voice-img img{
+    width:90px;
+    height:90px;
+    margin-bottom:10px;
+  }
+
+  .voice-text{
+    text-align:left; /* ←LP感出すならleft */
+  }
+
+  .voice-name{
+    text-align:center;
+    margin-bottom:10px;
+  }
+
+/* ======================
+   CTA
+====================== */
+
+.cta-btn.big{
+  padding:18px 80px;
+  font-size:18px;
+}
+
+.button{
+  padding-bottom: 0;
+}
+
+.footer-inner{
+  font-size: 10px;
+}
+
+}
+
