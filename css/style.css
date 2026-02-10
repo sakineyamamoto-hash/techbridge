@@ -591,13 +591,13 @@ footer .copyright {
   padding:0 16px;
 }
 
-section{
-  padding:90px 0;
-}
-
 h2{
   font-size:20px;
   margin-bottom:0px;
+}
+
+section{
+  padding: 60px 0;
 }
 
 /* header */
@@ -659,13 +659,13 @@ header{
 /* 左 */
 .item1{
   top:25%;
-  left:5%;
+  left:13%;
 }
 
 /* 上 */
 .item2{
   right:0%;
-  top:40%;
+  top:45%;
 }
 
 /* 下 */
@@ -675,7 +675,7 @@ header{
 }
 
 .trouble-img img{
-  width:120px;
+  width:100px;
   margin-top: 170px;
 }
 
@@ -684,8 +684,9 @@ header{
   padding:14px 22px;
 }
 
-.arrow img{
-  margin-top: 50px;
+.arrow img {
+  margin-top: 30px;
+  width: 40px;
 }
 
 .arrow > p{
@@ -708,12 +709,12 @@ header{
 }
 
 .reason-circle ul li{
-  width:130px;
-  height:130px;
+  width:120px;
+  height:120px;
 }
 
 .reason-circle ul li p{
-  font-size:15px;
+  font-size:13px;
 }
 
 
@@ -739,10 +740,12 @@ header{
 }
 
 .result-box li{
-  min-height:220px;
+  min-height:180px;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  padding: 0;
+  line-height: 1;
 }
 
 
@@ -841,7 +844,12 @@ header{
   .voice-wrap{
     flex-direction:column;
     align-items:center;
+    margin-bottom: 30px;
   }
+
+.voice-text > p{
+  font-size: 14px;
+}
 
   .voice-item{
     width:90%;
@@ -853,8 +861,8 @@ header{
   }
 
   .voice-img img{
-    width:90px;
-    height:90px;
+    width:200px;
+    height:200px;
     margin-bottom:10px;
   }
 
@@ -866,6 +874,7 @@ header{
     text-align:center;
     margin-bottom:10px;
   }
+
 
 /* ======================
    CTA
