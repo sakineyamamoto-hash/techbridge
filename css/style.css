@@ -423,7 +423,7 @@ header{
 
 /* 共通 */
 .flow-item{
-  background:var(--sub);
+  background:var(--main);
   color:var(--white);
   font-size:20px;
   padding:90px 90px;
@@ -797,7 +797,7 @@ header{
     width:85%;
     max-width:340px;
     padding:15px;
-    background:#355C7D;
+    background:var(--main);
     color:#fff;
     border-radius:12px;
     text-align:center;
