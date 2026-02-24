@@ -16,6 +16,19 @@ window.addEventListener("load", ()=>{
 
 });
 
+// フェード表示
+const fadeEls = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+fadeEls.forEach(el => observer.observe(el));
+
 
 // 実績カウント
 const section = document.querySelector(".result");
@@ -57,27 +70,6 @@ window.addEventListener("scroll", ()=>{
 
 });
 
-// reason 下線
-const circles = document.querySelectorAll(".reason-circle li");
-let done = false;
-
-window.addEventListener("scroll", ()=>{
-
-  if(done) return;
-
-  const top = document.querySelector(".reason").getBoundingClientRect().top;
-
-  if(top < window.innerHeight - 150){
-    done = true;
-
-    circles.forEach((el,i)=>{
-      setTimeout(()=>{
-        el.classList.add("show");
-      }, i*200);
-    });
-  }
-
-});
 
 
 
