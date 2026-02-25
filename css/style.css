@@ -36,7 +36,7 @@ h2{
 
 
 section{
-  padding:100px 0;
+  padding:80px 0;
 }
 
 /* ボタン小 */
@@ -423,7 +423,7 @@ header{
 
 /* 共通 */
 .flow-item{
-  background:var(--main);
+  background:var(--sub);
   color:var(--white);
   font-size:20px;
   padding:90px 90px;
@@ -556,23 +556,6 @@ footer .copyright {
   margin: 30px 0;
   font-weight: bold;
 }
-
-/* fade動き */
-.fade{
-  opacity:0;
-  transform:translateY(30px);
-  transition:0.8s;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.delay1{ transition-delay:.2s;}
-.delay2{ transition-delay:.5s;}
-.delay3{ transition-delay:.7s;}
-
 
 /* =========================
 スマホ
@@ -797,7 +780,7 @@ header{
     width:85%;
     max-width:340px;
     padding:15px;
-    background:var(--main);
+    background:#355C7D;
     color:#fff;
     border-radius:12px;
     text-align:center;
